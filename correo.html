@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Perfil</title>
+    <link rel="stylesheet" type="text/css" href="estilos3.css">
+    
+<body>
+    <div class="tarjeta" id="tarjeta">
+        <h1>INTRODUCE EL CORREO ELECTRONICO</h1>
+        <form id="emailForm">
+            <input type="email" id="email" name="email" required>
+            <button type="submit">Validar</button>
+            <p id="result" class="hidden"></p>
+            <footer>
+                <pre><a href="index.html">&#127810; Inicio</a></pre>
+            </footer>
+        </form>
+    </div>
+    <script>
+        document.getElementById('emailForm').addEventListener('submit', function(event) {
+            event.preventDefault(); 
+
+            const emailInput = document.getElementById('email');
+            const resultParagraph = document.getElementById('result');
+
+            const email = emailInput.value;
+            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            const validDomains = ['gmail.com', 'hotmail.com', 'yahoo.com'];
+
+            if (email === '') {
+                resultParagraph.textContent = '';
+                resultParagraph.classList.add('hidden');
+            } else if (emailPattern.test(email)) {
+                const domain = email.split('@')[1];
+                if (validDomains.includes(domain)) {
+                    resultParagraph.textContent = 'Correo válido';
+                    resultParagraph.style.color = 'green';
+                } else {
+                    resultParagraph.textContent = 'Correo válido, pero no es una de las instituciones permitidas';
+                    resultParagraph.style.color = 'orange';
+                }
+            } else {
+                resultParagraph.textContent = 'Correo inválido';
+                resultParagraph.style.color = 'red';
+            }
+
+            if (email !== '') {
+                resultParagraph.classList.remove('hidden');
+            } else {
+                resultParagraph.classList.add('hidden');
+            }
+        });
+
+        document.getElementById('email').addEventListener('input', function() {
+            const resultParagraph = document.getElementById('result');
+            if (this.value === '') {
+                resultParagraph.textContent = '';
+                resultParagraph.classList.add('hidden');
+            }
+        });
+    </script>
+</body>
+</html>

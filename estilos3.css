@@ -1,0 +1,91 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #a8c0db; 
+    margin: 0;
+    padding: 0;
+    height: 100vh; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.tarjeta {
+    background-color: #7fa4c9; 
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(104, 46, 46, 0.2);
+    padding: 20px;
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+}
+
+h1 {
+    margin-bottom: 20px;
+    color: #333; 
+}
+
+input[type="email"] {
+    width: calc(100% - 20px); 
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+button {
+    padding: 10px 20px;
+    border: none;
+    background-color: #507093;
+    color: #000000;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.hidden {
+    display: none;
+}
+
+#result {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+
+footer {
+    border-radius: 20px;
+    max-width: 500px;
+}
+
+footer a {
+    color: #010101;
+    text-decoration: none;
+}
+
+footer a:visited {
+    color: #f5e2e2;
+}
+
+footer a:hover {
+    color: #f5e2e2;
+    text-decoration: underline;
+}
+
+footer a:active {
+    color: #f5e2e2;
+}
+
+footer a {
+    background-color: #000000;
+    color: #f5e2e2;
+    margin: 5%;
+    padding: 2px;
+    font-size: 15px;
+    border: 2px;
+    border-radius: 20px;
+    max-width: 500px;
+}  
